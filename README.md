@@ -2,6 +2,8 @@
 
 Astro Font Picker is an Astro Dev Toolbar integration that lets you try out different fonts on your site. It uses Google Fonts to load over 1000 open source fonts.
 
+![astro-font-picker](https://github.com/randombits-dev/astro-font-picker/assets/4440760/638c9077-1d36-4691-a483-3e9ff4e9b586)
+
 ## Installation
 
 ### Automatic installation:
@@ -33,13 +35,15 @@ export default {
 
 Astro Font Picker will show up as a new icon in the dev toolbar, which is enabled by default in Astro 4.0 and above.
 
-Choose a font type and a font family from the dropdowns. The font will be applied to the body element of your site.
+![astro-font-picker](https://github.com/randombits-dev/astro-font-picker/assets/4440760/d75bd523-b142-4548-a7fa-ca32f0d9ecce)
+
+Filter the fonts by type (optional), and then choose a font family. The font will be applied to the body element of your site.
 
 If you have font families applied to elements lower than the body element, it will not override those fonts unless you enable the `Override All Styles` toggle.
 
 ### Enabled
 
-This toggle enables and disables the font picker. It is enabled by default.
+This toggle controls whether or not the selected font is applied to the page. It is enabled by default.
 
 ### Override All Styles
 
@@ -69,3 +73,7 @@ h1 {
 ### View in Google Fonts
 
 This link will open the selected font in Google Fonts.
+
+### Settings are stored in session storage
+
+All of the settings (enabled, override, font type, and font family) are saved in session storage, so they are not lost when the page refreshes during development.
