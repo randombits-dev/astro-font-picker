@@ -6,7 +6,7 @@
     "url": "https://github.com/randombits-dev/astro-font-picker/issues"
   },
   "homepage": "https://github.com/randombits-dev/astro-font-picker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,14 +15,15 @@
   ],
   "keywords": [
     "astro",
+    "withastro",
+    "astro-integration",
     "astro-toolbar",
     "astro-dev-toolbar",
     "toolbar",
     "font",
     "google",
-    "google fonts",
-    "font picker",
-    "font family"
+    "google-fonts",
+    "font-picker"
   ],
   "scripts": {
     "dev": "vite build --watch",
@@ -37,7 +38,8 @@
     "@types/node": "20.10.4",
     "astro": "4.0.5",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.6.1"
   },
   "peerDependencies": {
     "astro": "^4.0.0"

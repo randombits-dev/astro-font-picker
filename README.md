@@ -1,4 +1,4 @@
-# Astro Font Picker &nbsp;&nbsp;&nbsp;[![NPM Version](https://flat.badgen.net/npm/v/astro-font-picker)](https://www.npmjs.com/package/fontable)
+# Astro Font Picker &nbsp;&nbsp;&nbsp;[![NPM Version](https://flat.badgen.net/npm/v/astro-font-picker)](https://www.npmjs.com/package/astro-font-picker)
 
 Astro Font Picker is an Astro Dev Toolbar integration that lets you try out different fonts on your site. It uses Google Fonts to load over 1000 open source fonts.
 
@@ -31,7 +31,7 @@ export default {
 
 ## Usage
 
-Astro Font Picker is a Dev Toolbar integration. It will show up as a new icon in the dev toolbar, which is enabled by default Astro 4.0 and above.
+Astro Font Picker will show up as a new icon in the dev toolbar, which is enabled by default in Astro 4.0 and above.
 
 Choose a font type and a font family from the dropdowns. The font will be applied to the body element of your site.
 
