@@ -1,0 +1,13 @@
+{
+  "name": "example",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "exampleStart": "astro dev",
+    "exampleBuild": "astro build",
+    "examplePreview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.0.5"
+  }
+}

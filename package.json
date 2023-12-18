@@ -1,0 +1,45 @@
+{
+  "name": "astro-font-picker",
+  "description": "Find the right font by putting a font picker in the Astro toolbar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/randombits-dev/astro-font-picker/issues"
+  },
+  "homepage": "https://github.com/randombits-dev/astro-font-picker",
+  "version": "0.0.3",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "astro",
+    "astro-toolbar",
+    "toolbar",
+    "font",
+    "google",
+    "google fonts",
+    "font picker",
+    "font family"
+  ],
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "webfontloader": "^1.6.28"
+  },
+  "devDependencies": {
+    "@types/node": "20.10.4",
+    "astro": "4.0.5",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-css-injected-by-js": "^3.3.0",
+    "vite-plugin-dts": "^3.6.1"
+  },
+  "peerDependencies": {
+    "astro": "^4.0.0"
+  }
+}
