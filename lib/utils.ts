@@ -34,8 +34,12 @@ export const getFontCSS = (font: string) => {
   return `font-family: ${font}, ${getFontFallback(font)}`;
 };
 
-export const getFontStyle = (font: string) => {
-  return `body { font-family: '${font}' !important; }`;
+export const getFontStyle = (font: string, override: boolean) => {
+  if (override) {
+    return `body * { font-family: '${font}' !important; }`;
+  } else {
+    return `body { font-family: '${font}' !important; }`;
+  }
 };
 
 export const getFontOptions = (selectedGroup: string, selectedFont: string) => {

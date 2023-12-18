@@ -11,11 +11,11 @@ const appName = "Font Picker";
 const STORAGE_KEY = 'astro:dev-overlay:font-picker';
 
 export default ({
-  id: "astro-tunnel",
+  id: "astro-font-picker",
   name: appName,
   icon: ICON,
   init(canvas) {
-    const settings = JSON.parse(sessionStorage.getItem(STORAGE_KEY)) || {enabled: true};
+    const settings = JSON.parse(sessionStorage.getItem(STORAGE_KEY)) || {enabled: true, override: false};
     const updateSetting = (key: string, value: any) => {
       settings[key] = value;
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
@@ -42,6 +42,15 @@ export default ({
       }
     });
 
+    const override = windowElement.querySelector("#override") as DevOverlayToggle;
+    override.input.checked = settings.override ?? true;
+    override.input.addEventListener("change", () => {
+      updateSetting('override', override.input.checked);
+      if (settings.enabled) {
+        loadFont(settings.font);
+      }
+    });
+
     const loadFont = (font: string) => {
       updateSetting('font', font);
       if (font) {
@@ -50,7 +59,7 @@ export default ({
             families: [font]
           },
           active: () => {
-            style.textContent = getFontStyle(font);
+            style.textContent = getFontStyle(font, settings.override);
             googleLink.href = getGoogleLink(font);
             instr1.innerText = getFontLink(font);
             instr2.innerText = getFontCSS(font);
@@ -98,23 +107,5 @@ export default ({
     });
 
     canvas.appendChild(windowElement);
-
-    // function onPageClick(event: MouseEvent) {
-    //   const target = event.target as Element | null;
-    //   if (!target) return;
-    //   if (!target.closest) return;
-    //   if (target.closest('astro-dev-toolbar')) return;
-    //   event.preventDefault();
-    //   event.stopPropagation();
-    //   console.log(target);
-    // }
-
-    // eventTarget.addEventListener('plugin-toggled', (event: any) => {
-    //   if (event.detail.state === true) {
-    //     document.addEventListener('click', onPageClick, true);
-    //   } else {
-    //     document.removeEventListener('click', onPageClick, true);
-    //   }
-    // });
   }
 } satisfies DevToolbarApp);

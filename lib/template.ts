@@ -1,6 +1,11 @@
 export const TEMPLATE = `
-  <h1>Font Picker   <astro-dev-toolbar-toggle id="toggle"></astro-dev-toolbar-toggle>
-</h1>
+  <h1>
+    <span>Font Picker</span>
+    <span class="toggle-label">Enabled</span>
+    <astro-dev-toolbar-toggle id="toggle"></astro-dev-toolbar-toggle>
+    <span class="toggle-label">Override All Styles</span>
+    <astro-dev-toolbar-toggle id="override"></astro-dev-toolbar-toggle>
+  </h1>
   <div class="flex">
     <select id="group-select"></select>
     <select id="font-select"></select>    
@@ -16,6 +21,12 @@ export const TEMPLATE = `
     
     h1 {
         margin: 0;
+        display: inline-block;
+      }
+      
+      .toggle-label {
+        margin-left: 20px;
+        font-size: 14px;
       }
       
       .flex {

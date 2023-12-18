@@ -26,7 +26,8 @@
   "scripts": {
     "dev": "vite build --watch",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "fetchFonts": "node scripts/fetchData.js"
   },
   "dependencies": {
     "webfontloader": "^1.6.28"
@@ -35,9 +36,7 @@
     "@types/node": "20.10.4",
     "astro": "4.0.5",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5",
-    "vite-plugin-css-injected-by-js": "^3.3.0",
-    "vite-plugin-dts": "^3.6.1"
+    "vite": "^4.4.5"
   },
   "peerDependencies": {
     "astro": "^4.0.0"
