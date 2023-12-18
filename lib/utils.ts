@@ -55,7 +55,7 @@ export const getFontOptions = (selectedGroup: string, selectedFont: string) => {
 
 export const getGroupOptions = (selectedGroup: string) => {
   return [
-    '<option value="">All Groups</option>',
+    '<option value="">All Types</option>',
     ...ALL_GROUPS.map(group => `<option ${group === selectedGroup ? "selected" : ''}>${group}</option>`).join('')
   ];
 };

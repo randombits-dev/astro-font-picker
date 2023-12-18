@@ -1,12 +1,12 @@
 {
   "name": "astro-font-picker",
-  "description": "Find the right font by putting a font picker in the Astro toolbar",
+  "description": "Try out different fonts on your website by putting a font picker in the Astro Dev Toolbar",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/randombits-dev/astro-font-picker/issues"
   },
   "homepage": "https://github.com/randombits-dev/astro-font-picker",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,6 +16,7 @@
   "keywords": [
     "astro",
     "astro-toolbar",
+    "astro-dev-toolbar",
     "toolbar",
     "font",
     "google",

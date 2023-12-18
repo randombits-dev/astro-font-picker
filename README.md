@@ -1,47 +1,71 @@
-# Fontable &nbsp;&nbsp;&nbsp;[![NPM Version](https://flat.badgen.net/npm/v/fontable)](https://www.npmjs.com/package/fontable)&nbsp;&nbsp;[![Demo](https://flat.badgen.net/badge/icon/demo/cyan?label)](https://randombits-dev.github.io/fontable/)
+# Astro Font Picker &nbsp;&nbsp;&nbsp;[![NPM Version](https://flat.badgen.net/npm/v/astro-font-picker)](https://www.npmjs.com/package/fontable)
 
-## Find the right Google font by embedding a font picker on your website.
+Astro Font Picker is an Astro Dev Toolbar integration that lets you try out different fonts on your site. It uses Google Fonts to load over 1000 open source fonts.
 
-![fontable](https://github.com/randombits-dev/fontable/assets/4440760/6c296296-28ed-48bf-b1e7-3d989afdd0e5)
+## Installation
 
-### Features
+### Automatic installation:
 
-1. Embed a temporary font picker on your site. It shows up in the lower right corner of the page.
-2. Choose from over 1000 open source fonts, loaded from Google fonts.
-3. When you find a font you like, copy the CSS to install it permanently on your site, and remove the font picker.
-
-### Tips
-
-1. The font picker is focused on page load. You can use arrow keys to try out fonts quickly.
-2. A full guide to using Google fonts: https://developers.google.com/fonts/docs/getting_started
-
-### Quick Install
-
-Add the following script to your html page:
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/fontable@latest/dist/auto.js"></script>
+```
+npx astro add astro-font-picker
 ```
 
-Fonts are applied to the body element.
+### Manual installation:
 
-### Advanced Install
-
-Use this method if you want to customize how the font family is applied on your site.
-
-```html
-<script>
-  import {initFontPicker} from 'https://cdn.jsdelivr.net/npm/fontable@latest';
-
-  initFontPicker({
-    onChange: (fontFamily) => {
-      // set the font family style manually
-      document.querySelector('#content').style.fontFamily = fontFamily;
-    }
-  });
-</script>
+```
+npm install astro-font-picker
 ```
 
-### About
+Add the following to your `astro.config.mjs` file:
 
-Brought to you by [Random Bits Software Engineering](https://randombits.dev)
+```js
+import astroFontPicker from 'astro-font-picker';
+
+export default {
+  integrations: [
+    astroFontPicker(),
+    // other integrations
+  ],
+};
+```
+
+## Usage
+
+Astro Font Picker is a Dev Toolbar integration. It will show up as a new icon in the dev toolbar, which is enabled by default Astro 4.0 and above.
+
+Choose a font type and a font family from the dropdowns. The font will be applied to the body element of your site.
+
+If you have font families applied to elements lower than the body element, it will not override those fonts unless you enable the `Override All Styles` toggle.
+
+### Enabled
+
+This toggle enables and disables the font picker. It is enabled by default.
+
+### Override All Styles
+
+This toggle will override all `font-family` styles on your site with the selected font. It is disabled by default.
+
+The main reason for having the `Override All Styles` toggle disabled is to maintain the font style of specific elements or sections of your site. This way, when you use the font picker to select a font for other areas, it won't override fonts you have already decided on.
+
+### Font CSS Output
+
+This is the stylesheet link and CSS that you can copy and paste into your site to permanently install the font. For example:
+
+In your `head` element:
+
+```html
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Itim"/>
+```
+
+In your CSS:
+
+```css
+h1 {
+    font-family: Itim, cursive;
+}
+```
+
+### View in Google Fonts
+
+This link will open the selected font in Google Fonts.
