@@ -14,11 +14,21 @@ export default ({
   id: "astro-font-picker",
   name: appName,
   icon: ICON,
-  init(canvas) {
+  init(canvas, eventTarget) {
     const settings = JSON.parse(sessionStorage.getItem(STORAGE_KEY)) || {enabled: true, override: false};
     const updateSetting = (key: string, value: any) => {
       settings[key] = value;
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+    };
+
+    const updateNotification = () => {
+      eventTarget.dispatchEvent(
+          new CustomEvent('toggle-notification', {
+            detail: {
+              state: !!settings.font && settings.enabled,
+            },
+          })
+      );
     };
 
     const style = document.createElement('style');
@@ -39,6 +49,7 @@ export default ({
         loadFont(settings.font);
       } else {
         document.querySelector('#astro-font-picker').remove();
+        updateNotification();
       }
     });
 
@@ -53,7 +64,8 @@ export default ({
 
     const loadFont = (font: string) => {
       updateSetting('font', font);
-      if (font) {
+      updateNotification();
+      if (font && settings.enabled) {
         WebFont.load({
           google: {
             families: [font]
