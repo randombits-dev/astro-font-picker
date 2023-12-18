@@ -27,11 +27,11 @@ export const getGoogleLink = (font: string) => {
 };
 
 export const getFontLink = (font: string) => {
-  return `https://fonts.googleapis.com/css2?family=${font.replaceAll(' ', '+')}`;
+  return `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=${font.replaceAll(' ', '+')}"/>`;
 };
 
 export const getFontCSS = (font: string) => {
-  return `font-family: ${font}, ${getFontFallback(font)}`;
+  return `font-family: ${font}, ${getFontFallback(font)};`;
 };
 
 export const getFontStyle = (font: string, override: boolean) => {
