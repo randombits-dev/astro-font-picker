@@ -79,3 +79,7 @@ This link will open the selected font in Google Fonts.
 ### Settings are stored in session storage
 
 All the settings (enabled, override, font type, and font family) are saved in session storage, so they are not lost when the page refreshes during development.
+
+## Other
+
+This project is based off the [Fontable](https://www.npmjs.com/package/fontable) library, which is a standalone font picker that can be used on any website.
