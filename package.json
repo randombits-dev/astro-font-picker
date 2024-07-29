@@ -35,7 +35,7 @@
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "@types/node": "^20.11.0",
+    "@types/node": "^22.0.0",
     "astro": "^4.1.2",
     "typescript": "^5.3.3",
     "vite": "^5.0.11",
