@@ -1,19 +1,14 @@
 import type {DevToolbarApp} from "astro";
 
 import * as WebFont from 'webfontloader';
-import {DevOverlayToggle} from "astro/client/dev-overlay/ui-library/index.js";
+import {DevToolbarToggle} from "astro/client/dev-toolbar/ui-library/toggle.js";
 import {TEMPLATE} from "./template.js";
 import {getFontCSS, getFontLink, getFontOptions, getFontStyle, getGoogleLink, getGroupOptions} from "./utils.js";
-import {ICON} from "./icon.js";
 
 
-const appName = "Font Picker";
 const STORAGE_KEY = 'astro:dev-overlay:font-picker';
 
 export default ({
-  id: "astro-font-picker",
-  name: appName,
-  icon: ICON,
   init(canvas, eventTarget) {
     const settings = JSON.parse(sessionStorage.getItem(STORAGE_KEY)) || {enabled: true, override: false};
     const updateSetting = (key: string, value: any) => {
@@ -41,7 +36,7 @@ export default ({
     const instr2 = windowElement.querySelector("#instr2") as HTMLDivElement;
     const googleLink = windowElement.querySelector("#google-link") as HTMLAnchorElement;
 
-    const toggle = windowElement.querySelector("#toggle") as DevOverlayToggle;
+    const toggle = windowElement.querySelector("#toggle") as DevToolbarToggle;
     toggle.input.checked = settings.enabled ?? true;
     toggle.input.addEventListener("change", () => {
       updateSetting('enabled', toggle.input.checked);
@@ -53,7 +48,7 @@ export default ({
       }
     });
 
-    const override = windowElement.querySelector("#override") as DevOverlayToggle;
+    const override = windowElement.querySelector("#override") as DevToolbarToggle;
     override.input.checked = settings.override ?? true;
     override.input.addEventListener("change", () => {
       updateSetting('override', override.input.checked);

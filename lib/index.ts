@@ -1,4 +1,5 @@
 import type {AstroIntegration} from "astro";
+import {ICON} from "./icon.js";
 
 export default function createAstroFontPickerIntegration(): AstroIntegration {
   return {
@@ -7,7 +8,12 @@ export default function createAstroFontPickerIntegration(): AstroIntegration {
       "astro:config:setup": ({addDevToolbarApp}) => {
         const url = import.meta.url;
         const path = url.substring(0, url.lastIndexOf("/"));
-        addDevToolbarApp(path + "/astroFontPicker.js");
+        addDevToolbarApp({
+          id: "astro-font-picker",
+          name: "Font Picker",
+          icon: ICON,
+          entrypoint: path + "/astroFontPicker.js"
+        });
       }
     },
   };

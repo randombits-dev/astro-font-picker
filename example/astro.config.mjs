@@ -1,5 +1,5 @@
 import {defineConfig} from 'astro/config';
-import astroFontPicker from 'astro-font-picker';
+import astroFontPicker from '../dist/index.js';
 
 // https://astro.build/config
 export default defineConfig({

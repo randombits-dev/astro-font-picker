@@ -6,7 +6,7 @@
     "url": "https://github.com/randombits-dev/astro-font-picker/issues"
   },
   "homepage": "https://github.com/randombits-dev/astro-font-picker",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -35,13 +35,13 @@
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "@types/node": "^20.11.0",
-    "astro": "^4.1.2",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.11",
-    "vite-plugin-dts": "^3.7.0"
+    "@types/node": "^22.10.7",
+    "astro": "^5.1.7",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7",
+    "vite-plugin-dts": "^4.5.0"
   },
   "peerDependencies": {
-    "astro": "^4.0.0"
+    "astro": ">4.0.0"
   }
 }
