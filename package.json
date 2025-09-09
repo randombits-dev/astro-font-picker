@@ -35,13 +35,14 @@
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "@types/node": "^22.10.7",
-    "astro": "^5.1.7",
-    "typescript": "^5.7.3",
-    "vite": "^6.0.7",
-    "vite-plugin-dts": "^4.5.0"
+    "@types/node": "^24.3.1",
+    "astro": "^5.13.6",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.5",
+    "vite-plugin-dts": "^4.5.4"
   },
   "peerDependencies": {
     "astro": ">4.0.0"
-  }
+  },
+  "packageManager": "pnpm@10.5.2+sha512.da9dc28cd3ff40d0592188235ab25d3202add8a207afbedc682220e4a0029ffbff4562102b9e6e46b4e3f9e8bd53e6d05de48544b0c57d4b0179e22c76d1199b"
 }
